@@ -1,0 +1,10 @@
+extends ../app.jade
+block app
+  .panel(class=todo.isFinished ? 'panel-success' : 'panel-primary')
+    .panel-heading
+      h4= todo.name
+        .label.label-info.pull-right= todo.isFinished ? 'Finished task' : "Unfinished task"
+    .panel-body
+      = todo.description
+  p
+    a.btn.btn-block.btn-primary(href=`/todo/${todo.id}\/edit`) Edit

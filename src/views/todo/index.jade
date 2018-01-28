@@ -1,0 +1,15 @@
+extends ../app.jade
+block app
+  p
+    a.btn.btn-block.btn-primary(href='todo/new') Create new todo
+  .row
+    each todo in todos
+      a(href=`/todo/${todo.id}`)
+        .panel(class=todo.isFinished ? 'panel-success' : 'panel-primary')
+          .panel-heading
+            h4= todo.name
+              .label.label-info.pull-right= todo.isFinished ? 'Finished task' : "Unfinished task"
+          .panel-body
+            = todo.description
+
+

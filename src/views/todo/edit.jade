@@ -1,0 +1,12 @@
+extends ../app.jade
+block app
+  p todo
+  form(action=`/todo/${todo.id}`, method="POST")
+    .form-group
+      input.form-control(type="text", name="name", placeholder="Name" value=`${todo.name}`)
+      input.form-control(type="text", name="description", placeholder="Description" value=`${todo.description}`)
+      | Finished:
+      input(type="checkbox", name="isFinished", value='true', checked=todo.isFinished)
+    button.btn.btn-default(type="submit") Submit
+
+

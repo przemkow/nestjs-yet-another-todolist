@@ -1,0 +1,10 @@
+extends ../app.jade
+block app
+  p todo
+  form(action="/todo", method="post")
+    .form-group
+      input.form-control(type='text', name="name", placeholder='Name')
+      input.form-control(type='text', name="description", placeholder='Description')
+    button.btn.btn-default(type='submit') Submit
+
+
